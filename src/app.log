@@ -1,0 +1,10 @@
+Mar 24, 2026 1:17:34 AM util.AppLogger warn
+WARNING: Login failed: tanish2@upi
+Mar 24, 2026 1:18:42 AM util.AppLogger info
+INFO: User registered: ravi@upi
+Mar 24, 2026 1:18:59 AM util.AppLogger info
+INFO: Login OK: ravi@upi
+Mar 24, 2026 1:24:12 AM util.AppLogger info
+INFO: User registered: ramu@upi
+Mar 24, 2026 1:24:30 AM util.AppLogger info
+INFO: Login OK: ramu@upi
