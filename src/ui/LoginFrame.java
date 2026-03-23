@@ -19,7 +19,7 @@ public class LoginFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
 
-        // ── Root: dark gradient backdrop ──────────────────────────────
+        // Dark gradient background
         JPanel root = new JPanel(new GridBagLayout()) {
             @Override protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -31,55 +31,68 @@ public class LoginFrame extends JFrame {
         };
         root.setOpaque(false);
 
-        // ── Card panel ───────────────────────────────────────────────
-        JPanel card = new JPanel();
-        card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
+        // White card
+        JPanel card = new JPanel(new GridBagLayout());
         card.setBackground(UITheme.BG_CARD);
-        card.setBorder(BorderFactory.createEmptyBorder(40, 44, 40, 44));
-        card.setPreferredSize(new Dimension(420, 520));
+        card.setBorder(BorderFactory.createEmptyBorder(44, 48, 44, 48));
+        card.setPreferredSize(new Dimension(420, 500));
 
-        // Logo area
-        JLabel logo = new JLabel("💳", SwingConstants.CENTER);
-        logo.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 48));
-        logo.setAlignmentX(CENTER_ALIGNMENT);
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 1.0;
+        c.gridx = 0;
+        int row = 0;
 
-        JLabel appTitle = new JLabel("UPI Pay");
-        appTitle.setFont(UITheme.F_TITLE);
-        appTitle.setForeground(UITheme.ACCENT_BLUE);
-        appTitle.setAlignmentX(CENTER_ALIGNMENT);
+        // Logo + title (centered)
+        JLabel logo = new JLabel("\uD83D\uDCB3", SwingConstants.CENTER);
+        logo.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 44));
+        c.gridy = row++; c.insets = new Insets(0, 0, 4, 0);
+        card.add(logo, c);
 
-        JLabel subtitle = new JLabel("Sign in to your account");
-        subtitle.setFont(UITheme.F_BODY);
-        subtitle.setForeground(UITheme.TEXT_MUTED);
-        subtitle.setAlignmentX(CENTER_ALIGNMENT);
+        JLabel title = new JLabel("UPI Pay", SwingConstants.CENTER);
+        title.setFont(UITheme.F_TITLE);
+        title.setForeground(UITheme.ACCENT_BLUE);
+        c.gridy = row++; c.insets = new Insets(0, 0, 4, 0);
+        card.add(title, c);
 
-        JButton loginBtn    = UITheme.primaryButton("Login");
+        JLabel sub = new JLabel("Sign in to your account", SwingConstants.CENTER);
+        sub.setFont(UITheme.F_BODY);
+        sub.setForeground(UITheme.TEXT_MUTED);
+        c.gridy = row++; c.insets = new Insets(0, 0, 28, 0);
+        card.add(sub, c);
+
+        // VPA field
+        c.gridy = row++; c.insets = new Insets(0, 0, 4, 0);
+        card.add(fieldLabel("VPA Address (e.g. name@upi)"), c);
+
+        vpaField.setPreferredSize(new Dimension(0, 42));
+        c.gridy = row++; c.insets = new Insets(0, 0, 0, 0);
+        card.add(vpaField, c);
+
+        c.gridy = row++; c.insets = new Insets(0, 0, 8, 0);
+        card.add(vpaErr, c);
+
+        // PIN field
+        c.gridy = row++; c.insets = new Insets(0, 0, 4, 0);
+        card.add(fieldLabel("UPI PIN"), c);
+
+        pinField.setPreferredSize(new Dimension(0, 42));
+        c.gridy = row++; c.insets = new Insets(0, 0, 0, 0);
+        card.add(pinField, c);
+
+        c.gridy = row++; c.insets = new Insets(0, 0, 20, 0);
+        card.add(pinErr, c);
+
+        // Buttons
+        JButton loginBtn = UITheme.primaryButton("Login");
+        loginBtn.setPreferredSize(new Dimension(0, 44));
+        c.gridy = row++; c.insets = new Insets(0, 0, 8, 0);
+        card.add(loginBtn, c);
+
         JButton registerBtn = UITheme.secondaryButton("Create Account");
-        loginBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 44));
-        registerBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 44));
-
-        vpaField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
-        pinField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
-
-        card.add(logo);
-        card.add(Box.createVerticalStrut(6));
-        card.add(appTitle);
-        card.add(Box.createVerticalStrut(4));
-        card.add(subtitle);
-        card.add(Box.createVerticalStrut(28));
-        card.add(fieldLabel("VPA Address"));
-        card.add(Box.createVerticalStrut(4));
-        card.add(vpaField);
-        card.add(vpaErr);
-        card.add(Box.createVerticalStrut(12));
-        card.add(fieldLabel("UPI PIN"));
-        card.add(Box.createVerticalStrut(4));
-        card.add(pinField);
-        card.add(pinErr);
-        card.add(Box.createVerticalStrut(24));
-        card.add(loginBtn);
-        card.add(Box.createVerticalStrut(10));
-        card.add(registerBtn);
+        registerBtn.setPreferredSize(new Dimension(0, 44));
+        c.gridy = row++; c.insets = new Insets(0, 0, 0, 0);
+        card.add(registerBtn, c);
 
         loginBtn.addActionListener(e -> doLogin());
         registerBtn.addActionListener(e -> { dispose(); new RegisterFrame(); });
@@ -116,7 +129,6 @@ public class LoginFrame extends JFrame {
         JLabel l = new JLabel(text);
         l.setFont(UITheme.F_LABEL);
         l.setForeground(UITheme.TEXT_MUTED);
-        l.setAlignmentX(LEFT_ALIGNMENT);
         return l;
     }
 }

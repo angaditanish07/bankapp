@@ -14,6 +14,13 @@ public class BankService {
         List<BankAccount> existing = accountDAO.getByUserId(account.getUserId());
         if (existing.isEmpty()) account.setPrimary(true);
         boolean result = accountDAO.linkAccount(account);
+        if (result && account.isPrimary()) {
+            try (java.sql.Connection c = util.DBConnection.getNewConnection()) {
+                accountDAO.syncBalance(account.getUserId(), c);
+            } catch (Exception e) {
+                AppLogger.error(e);
+            }
+        }
         AppLogger.info("Link account result for userId " + account.getUserId() + ": " + result);
         return result;
     }

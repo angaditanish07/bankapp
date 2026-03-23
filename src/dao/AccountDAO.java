@@ -62,12 +62,32 @@ public class AccountDAO {
                 "UPDATE bank_accounts SET is_primary = FALSE WHERE user_id = ?");
             ps1.setInt(1, userId);
             ps1.executeUpdate();
+            
             PreparedStatement ps2 = c.prepareStatement(
                 "UPDATE bank_accounts SET is_primary = TRUE WHERE account_id = ?");
             ps2.setInt(1, accountId);
             ps2.executeUpdate();
+
+            // Sync the user's balance to match the new primary account
+            syncBalance(userId, c);
+
         } catch (Exception e) {
             AppLogger.error(e);
+        }
+    }
+
+    /**
+     * Syncs the users table balance with the balance of their primary bank account.
+     */
+    public void syncBalance(int userId, Connection c) throws SQLException {
+        String sql = "UPDATE users u " +
+                     "JOIN bank_accounts b ON u.user_id = b.user_id " +
+                     "SET u.balance = b.balance " +
+                     "WHERE u.user_id = ? AND b.is_primary = TRUE";
+        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            int rows = ps.executeUpdate();
+            AppLogger.info("Synced balance for user " + userId + ". Rows affected: " + rows);
         }
     }
 
