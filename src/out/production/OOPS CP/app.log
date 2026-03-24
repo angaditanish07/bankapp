@@ -64,3 +64,7 @@ Mar 24, 2026 10:13:06 AM util.AppLogger info
 INFO: Synced balance for user 3. Rows affected: 1
 Mar 24, 2026 10:13:06 AM util.AppLogger info
 INFO: Primary account set: accountId=3 userId=3
+Mar 24, 2026 10:16:02 AM util.AppLogger info
+INFO: Login OK: ravi@upi
+Mar 24, 2026 11:08:35 AM util.AppLogger info
+INFO: User registered: amaan@upi

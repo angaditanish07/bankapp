@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DBConnection {
 
-    private static final String URL  = "jdbc:mysql://localhost:3306/upi_system2?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-    private static final String USER = "root";
-    private static final String PASS = "root";
+    private static final String URL  = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12821066?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String USER = "sql12821066";
+    private static final String PASS = "41kJ9iD1aA";
     private static Connection instance;
 
     private DBConnection() {}

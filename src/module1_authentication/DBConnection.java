@@ -12,9 +12,9 @@ public class DBConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/upi_system",
-                    "root",
-                    "root"
+                    "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12821066",
+                    "sql12821066",
+                    "41kJ9iD1aA"
             );
 
             return conn;
