@@ -20,3 +20,47 @@ Mar 24, 2026 1:37:57 AM util.AppLogger info
 INFO: Account linked: 1000 1112
 Mar 24, 2026 1:37:57 AM util.AppLogger info
 INFO: Link account result for userId 4: true
+Mar 24, 2026 1:41:50 AM util.AppLogger info
+INFO: Login OK: ravi@upi
+Mar 24, 2026 1:42:31 AM util.AppLogger info
+INFO: Account linked: 1000 1122
+Mar 24, 2026 1:42:31 AM util.AppLogger info
+INFO: Link account result for userId 3: true
+Mar 24, 2026 1:42:36 AM util.AppLogger info
+INFO: Synced balance for user 3. Rows affected: 1
+Mar 24, 2026 1:42:36 AM util.AppLogger info
+INFO: Primary account set: accountId=5 userId=3
+Mar 24, 2026 1:43:16 AM util.AppLogger info
+INFO: [STATE] Transaction Initiated
+Mar 24, 2026 1:43:16 AM util.AppLogger info
+INFO: [STATE] Transaction Pending
+Mar 24, 2026 1:43:16 AM util.AppLogger info
+INFO: [STATE] Transaction Successful
+Mar 24, 2026 1:43:16 AM util.AppLogger info
+INFO: Transfer OK: ravi@upi -> ramu@upi ₹500.0
+Mar 24, 2026 10:09:57 AM util.AppLogger info
+INFO: Login OK: ravi@upi
+Mar 24, 2026 10:10:50 AM util.AppLogger info
+INFO: [STATE] Transaction Initiated
+Mar 24, 2026 10:10:50 AM util.AppLogger info
+INFO: [STATE] Transaction Pending
+Mar 24, 2026 10:10:50 AM util.AppLogger info
+INFO: [STATE] Transaction Successful
+Mar 24, 2026 10:10:50 AM util.AppLogger info
+INFO: Transfer OK: ravi@upi -> ramu@upi ₹300.0
+Mar 24, 2026 10:11:27 AM util.AppLogger info
+INFO: Login OK: ramu@upi
+Mar 24, 2026 10:12:25 AM util.AppLogger info
+INFO: [STATE] Transaction Initiated
+Mar 24, 2026 10:12:25 AM util.AppLogger info
+INFO: [STATE] Transaction Pending
+Mar 24, 2026 10:12:25 AM util.AppLogger info
+INFO: [STATE] Transaction Successful
+Mar 24, 2026 10:12:25 AM util.AppLogger info
+INFO: Transfer OK: ramu@upi -> ravi@upi ₹100.0
+Mar 24, 2026 10:12:45 AM util.AppLogger info
+INFO: Login OK: ravi@upi
+Mar 24, 2026 10:13:06 AM util.AppLogger info
+INFO: Synced balance for user 3. Rows affected: 1
+Mar 24, 2026 10:13:06 AM util.AppLogger info
+INFO: Primary account set: accountId=3 userId=3

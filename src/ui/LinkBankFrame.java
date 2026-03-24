@@ -24,7 +24,7 @@ public class LinkBankFrame extends JFrame {
     private       DefaultListModel<BankAccount> listModel;
 
     public LinkBankFrame(User user) {
-        super("UPI Pay — Link Bank Account");
+        super("Pay Flow — Link Bank Account");
         this.user = user;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);

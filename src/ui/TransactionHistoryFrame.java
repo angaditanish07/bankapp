@@ -16,7 +16,7 @@ public class TransactionHistoryFrame extends JFrame {
     private DefaultTableModel tableModel;
 
     public TransactionHistoryFrame(User user) {
-        super("UPI Pay — Transaction History");
+        super("Pay Flow— Transaction History");
         this.user = user;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);

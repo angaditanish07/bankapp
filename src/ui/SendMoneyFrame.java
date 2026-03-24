@@ -20,7 +20,7 @@ public class SendMoneyFrame extends JFrame {
     private final PaymentService payService = new PaymentService();
 
     public SendMoneyFrame(User user) {
-        super("UPI Pay — Send Money");
+        super("Pay Flow — Send Money");
         this.sender = user;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);

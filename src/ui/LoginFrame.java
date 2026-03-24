@@ -15,7 +15,7 @@ public class LoginFrame extends JFrame {
     private final JLabel         pinErr   = UITheme.errorLabel();
 
     public LoginFrame() {
-        super("UPI Pay — Login");
+        super("Pay Flow — Login");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
 
@@ -49,7 +49,7 @@ public class LoginFrame extends JFrame {
         c.gridy = row++; c.insets = new Insets(0, 0, 4, 0);
         card.add(logo, c);
 
-        JLabel title = new JLabel("UPI Pay", SwingConstants.CENTER);
+        JLabel title = new JLabel("Pay Flow", SwingConstants.CENTER);
         title.setFont(UITheme.F_TITLE);
         title.setForeground(UITheme.ACCENT_BLUE);
         c.gridy = row++; c.insets = new Insets(0, 0, 4, 0);

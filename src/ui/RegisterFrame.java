@@ -24,7 +24,7 @@ public class RegisterFrame extends JFrame {
     private final JLabel pin2Err   = UITheme.errorLabel();
 
     public RegisterFrame() {
-        super("UPI Pay — Create Account");
+        super("Pay Flow— Create Account");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
 

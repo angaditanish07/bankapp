@@ -16,11 +16,10 @@ import java.util.List;
 public class DashboardFrame extends JFrame {
 
     public DashboardFrame(User user) {
-        super("UPI Pay — Dashboard");
+        super("Pay Flow — Dashboard");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
 
-        // Refresh user balance from DB on each open
         User fresh = new UserDAO().getUserById(user.getUserId());
         User u = (fresh != null) ? fresh : user;
 
